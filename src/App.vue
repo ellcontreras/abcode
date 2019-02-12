@@ -1,38 +1,35 @@
 <template>
-  <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-toolbar>
-
-    <v-content>
-      <HelloWorld/>
-    </v-content>
-  </v-app>
+  <div>
+    <div class="navbar is-primary">
+      <div class="navbar-brand" @click="$router.push('/')">
+        <h3 id="title" class="subtitle is-3 has-text-white navbar-item">{{ $store.state.title }}</h3>
+      </div>
+    </div>
+    <div class="container">
+      <Home/>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Home from "./views/Home";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Home
   },
-  data () {
+  data() {
     return {
       //
-    }
+    };
   }
-}
+};
 </script>
+
+<style>
+#title {
+  cursor: pointer !important;
+}
+</style>
+
