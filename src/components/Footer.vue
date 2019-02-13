@@ -21,5 +21,9 @@ a {
 a:hover {
   color: whitesmoke !important;
 }
+
+.footer {
+  margin-top: 3em;
+}
 </style>
 
