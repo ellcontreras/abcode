@@ -2,6 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
 $primary: #008bff;
+$secondary: #00b2ff;
+
+$footer-background-color: #414656;
 
 $family-sans-serif: "Open Sans", sans-serif;
 
@@ -14,8 +17,41 @@ $family-sans-serif: "Open Sans", sans-serif;
     #00c1f7,
     #00cfee
   );
+}
 
+.margin-bottom {
   margin-bottom: 1em;
+}
+
+.background-gradient {
+  background-image: linear-gradient(
+    to right top,
+    #008bff,
+    #00a0ff,
+    #00b1ff,
+    #00c1f7,
+    #00cfee
+  );
+}
+
+.background-gradient-secondary {
+  background-image: linear-gradient(
+    to right top,
+    #00cfee,
+    #00d6e7,
+    #00dcdc,
+    #00e1cd,
+    #00e5ba
+  );
+}
+
+a {
+  color: whitesmoke !important;
+  font-weight: bold;
+}
+
+a:hover {
+  color: white !important;
 }
 
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
