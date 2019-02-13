@@ -69,6 +69,18 @@
             </div>
           </div>
         </div>
+
+        <div class="columns">
+          <div class="column"></div>
+          <div class="column">
+            <button
+              @click="$router.push({name: 'courses'})"
+              class="button is-large is-fullwidth is-primary is-outlined is-rounded"
+            >Navegar por los cursos</button>
+          </div>
+          <div class="column"></div>
+        </div>
+        <br>
       </div>
 
       <div class="hero background-gradient-secondary">
@@ -112,18 +124,12 @@
         </div>
       </div>
     </section>
-    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import Footer from "@/components/Footer";
-
 export default {
-  name: "Home",
-  components: {
-    Footer
-  }
+  name: "Home"
 };
 </script>
 
