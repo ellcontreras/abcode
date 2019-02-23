@@ -9,21 +9,6 @@
         <p
           class="has-text-centered has-text-white"
         >Selecciona tu ruta de aprendizaje de acuerdo a tu semestre</p>
-
-        <!-- <div class="columns">
-          <div class="column">
-            <img src="./assets/c_icon.svg" alt="">
-          </div>
-          <div class="column">
-            <img src="./assets/c_sharp.svg" alt="">
-          </div>
-          <div class="column">
-            <img src="./assets/html_icon.svg" alt="">
-          </div>
-          <div class="column">
-            <img src="./assets/android_icon.svg" alt="">
-          </div>
-        </div>-->
       </div>
     </div>
     <div v-else>
@@ -38,8 +23,8 @@
 
 <script>
 import Home from "./views/Home.vue";
-import Navbar from "@/components/Navbar.vue";
-import Footer from "@/components/Footer.vue";
+import Navbar from "@/components/layout/Navbar.vue";
+import Footer from "@/components/layout/Footer.vue";
 
 export default {
   name: "App",
