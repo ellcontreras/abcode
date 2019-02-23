@@ -29,5 +29,6 @@ export default new Router({
       name: "dashboard",
       component: Dashboard
     }
-  ]
+  ],
+  linkActiveClass: "is-active"
 });
