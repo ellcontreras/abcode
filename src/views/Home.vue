@@ -9,7 +9,7 @@
               <div class="column">
                 <div class="media">
                   <div class="media-left">
-                    <img src="../assets/luces.svg" class="image is-96x96" alt>
+                    <img src="../static/luces.svg" class="image is-96x96" alt>
                   </div>
                   <div class="media-content">
                     <h3 class="subtitle is-3">Fundamentos de Programación</h3>
@@ -20,7 +20,7 @@
               <div class="column">
                 <div class="media">
                   <div class="media-left">
-                    <img src="../assets/orientado_objetos.svg" class="image is-96x96" alt>
+                    <img src="../static/orientado_objetos.svg" class="image is-96x96" alt>
                   </div>
                   <div class="media-content">
                     <h3 class="subtitle is-3">Programación Orientada a Objetos</h3>
@@ -36,7 +36,7 @@
               <div class="column">
                 <div class="media">
                   <div class="media-left">
-                    <img src="../assets/desarrollo_web.svg" class="image is-96x96" alt>
+                    <img src="../static/desarrollo_web.svg" class="image is-96x96" alt>
                   </div>
                   <div class="media-content">
                     <h3 class="subtitle is-3">Desarrollo Web</h3>
@@ -47,7 +47,7 @@
               <div class="column">
                 <div class="media">
                   <div class="media-left">
-                    <img src="../assets/desarrollo_apps.svg" class="image is-96x96" alt>
+                    <img src="../static/desarrollo_apps.svg" class="image is-96x96" alt>
                   </div>
                   <div class="media-content">
                     <h3 class="subtitle is-3">Desarrollo de Apps</h3>
@@ -58,7 +58,7 @@
               <div class="column">
                 <div class="media">
                   <div class="media-left">
-                    <img src="../assets/redes.svg" class="image is-96x96" alt>
+                    <img src="../static/redes.svg" class="image is-96x96" alt>
                   </div>
                   <div class="media-content">
                     <h3 class="subtitle is-3">Servidores</h3>
@@ -91,7 +91,7 @@
               <router-link to="/">
                 <div class="card">
                   <div class="card-content">
-                    <img src="../assets/android_icon.svg" class="image is-128x128" alt>
+                    <img src="../static/android_icon.svg" class="image is-128x128" alt>
                     <h4 class="subtitle is-4">Lorem ipsum</h4>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam ducimus culpa minus doloremque. Saepe magnam obcaecati natus nemo ab neque maiores veritatis! Debitis recusandae laudantium optio cumque adipisci sed eum.</p>
                   </div>
@@ -102,7 +102,7 @@
               <router-link to="/">
                 <div class="card">
                   <div class="card-content">
-                    <img src="../assets/c_icon.svg" class="image is-128x128" alt>
+                    <img src="../static/c_icon.svg" class="image is-128x128" alt>
                     <h4 class="subtitle is-4">Lorem ipsum</h4>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam ducimus culpa minus doloremque. Saepe magnam obcaecati natus nemo ab neque maiores veritatis! Debitis recusandae laudantium optio cumque adipisci sed eum.</p>
                   </div>
@@ -113,7 +113,7 @@
               <router-link to="/">
                 <div class="card">
                   <div class="card-content">
-                    <img src="../assets/c_sharp.svg" class="image is-128x128" alt>
+                    <img src="../static/c_sharp.svg" class="image is-128x128" alt>
                     <h4 class="subtitle is-4">Lorem ipsum</h4>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam ducimus culpa minus doloremque. Saepe magnam obcaecati natus nemo ab neque maiores veritatis! Debitis recusandae laudantium optio cumque adipisci sed eum.</p>
                   </div>
