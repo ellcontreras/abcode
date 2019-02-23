@@ -54,6 +54,23 @@ a:hover {
   color: white !important;
 }
 
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrolling-card {
+    flex: 0 0 auto;
+    margin-right: 1em;
+  }
+}
+
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import "../../node_modules/bulma/sass/base/_all.sass";
 @import "../../node_modules/bulma/sass/elements/_all.sass";
