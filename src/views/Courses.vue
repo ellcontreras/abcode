@@ -7,21 +7,21 @@
     </div>
 
     <div class="container">
-      <div class="hero" v-for="(course, key) of $store.state.courses" :key="key">
+      <div class="hero" v-for="(category, key) of $store.state.course_categories" :key="key">
         <div class="hero-body">
           <div class="media">
             <div class="media-left">
-              <img :src="course.image" class="image is-96x96" :alt="course.image">
+              <img :src="category.image" class="image is-96x96" :alt="category.image">
             </div>
             <div class="media-content">
-              <h3 class="subtitle is-3">{{ course.title }}</h3>
-              <p>{{ course.description }}</p>
+              <h3 class="subtitle is-3">{{ category.title }}</h3>
+              <p>{{ category.description }}</p>
             </div>
           </div>
         </div>
         <div class="hero-foot">
           <div class="columns">
-            <div v-for="(link, k) of course.links" :key="k">
+            <div v-for="(link, k) of category.links" :key="k">
               <div class="column">
                 <router-link :to="`/course/${link}`">{{ link }}</router-link>
               </div>
@@ -35,10 +35,7 @@
 
 <script>
 export default {
-  name: "Courses",
-  data: () => ({
-    prefix: "../static/"
-  })
+  name: "Courses"
 };
 </script>
 
