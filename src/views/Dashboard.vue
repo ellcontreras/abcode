@@ -1,15 +1,27 @@
 <template>
-  <div class="card">
-    <div class="card-content">
-      <h1 class="title is-1 has-text-centered">Dashboard</h1>
-      <hr>
-      <analytics-user/>
-      <br>
-      <h2 class="subtitle is-2">Cursos</h2>
-      <div class="scrolling-wrapper">
-        <div v-for="(course, key) of $store.getters.courses" :key="key" class="scrolling-card">
-          <div :class="$store.getters.categoryColor(course.category).color" class="notification">
-            <h3 class="subtitle is-3">{{ course.name }}</h3>
+  <div class="columns">
+    <div class="column is-one-quarter">
+      <Menu/>
+    </div>
+    <div class="column">
+      <h2 class="title is-2 has-text-centered">Dashboard</h2>
+      <div class="card">
+        <div class="card-content">
+          <h3 class="subtitle is-3">Actualizaciones diarias</h3>
+          <div id="scroll">
+            <div class="card" v-for="(update, key) of $store.state.dailyUpdates" :key="key">
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <span class="tag is-black">Notificación</span>
+                    <p>12:05 p.m</p>
+                  </div>
+                  <div class="media-content">
+                    <router-link :to="`/update/${update}`">{{ update }}</router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -19,12 +31,27 @@
 
 <script>
 import AnalyticsUser from "@/components/dashboard/AnalyticsUser.vue";
+import Menu from "@/components/dashboard/Menu.vue";
 
 export default {
   name: "Dashboard",
   components: {
-    AnalyticsUser
+    AnalyticsUser,
+    Menu
   }
 };
 </script>
+
+<style scoped>
+a {
+  color: #444 !important;
+}
+a:hover {
+  color: #111 !important;
+}
+#scroll {
+  max-height: 294px;
+  overflow: auto;
+}
+</style>
 

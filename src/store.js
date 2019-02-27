@@ -107,6 +107,13 @@ export default new Vuex.Store({
         name: "Web",
         category: "servidores"
       }
+    ],
+    dailyUpdates: [
+      "@usuario ha terminado un curso",
+      "Tienes nuevos mensajes en la bandeja",
+      "Hay un nuevo usuario",
+      "Hay esto bla",
+      "lorem ipsum dolor quien sabe que"
     ]
   },
   getters: {
