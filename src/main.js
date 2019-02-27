@@ -1,12 +1,19 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import store from "./store";
+import store from "./store/store";
+import toastr from "toastr";
 import "./registerServiceWorker";
 
 import "./sass/styles.scss";
 
 Vue.config.productionTip = false;
+
+toastr.options = {
+  positionClass: "toast-top-right"
+};
+
+Vue.prototype.$toastr = toastr;
 
 new Vue({
   router,
