@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import About from "./views/About.vue";
 import Courses from "./views/Courses.vue";
 import Dashboard from "./views/Dashboard.vue";
+import DashboardCourses from "./views/DashboardCourses.vue";
 import PageNotFound from "./views/PageNotFound.vue";
 
 Vue.use(Router);
@@ -28,7 +29,14 @@ export default new Router({
     {
       path: "/dashboard",
       name: "dashboard",
-      component: Dashboard
+      component: Dashboard,
+      children: [
+        {
+          path: "courses",
+          name: "dashboard course",
+          component: DashboardCourses
+        }
+      ]
     },
     {
       path: "*",
