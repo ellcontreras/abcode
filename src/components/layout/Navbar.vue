@@ -12,7 +12,7 @@
           <router-link to="/about">Acerca</router-link>
         </div>
         <div class="navbar-item">
-          <router-link to="dashboard">Dashboard</router-link>
+          <router-link to="/dashboard">Dashboard</router-link>
         </div>
       </div>
     </div>
