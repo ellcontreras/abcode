@@ -25,6 +25,7 @@
 import Home from "./views/Home.vue";
 import Navbar from "@/components/layout/Navbar.vue";
 import Footer from "@/components/layout/Footer.vue";
+import { ADD_DAILY_UPDATE, DELETE_DAILY_UPDATE } from "./store/mutation-types";
 
 export default {
   name: "App",
@@ -33,10 +34,17 @@ export default {
     Navbar,
     Footer
   },
-  data() {
-    return {
-      //
-    };
+  created() {
+    this.$store.subscribe(mutation => {
+      switch (mutation.type) {
+        case ADD_DAILY_UPDATE:
+          this.$toastr.success(
+            "Se ha agregado una notificación",
+            mutation.payload
+          );
+          break;
+      }
+    });
   }
 };
 </script>
