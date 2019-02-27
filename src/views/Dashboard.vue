@@ -13,7 +13,10 @@
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
-                    <span class="tag is-black">Notificación</span>
+                    <span
+                      class="tag is-black"
+                      @click="$store.commit('ADD_DAILY_UPDATE', 'hola');"
+                    >Notificación</span>
                     <p>12:05 p.m</p>
                   </div>
                   <div class="media-content">
@@ -50,7 +53,7 @@ a:hover {
   color: #111 !important;
 }
 #scroll {
-  max-height: 294px;
+  max-height: 292px;
   overflow: auto;
 }
 </style>
