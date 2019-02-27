@@ -3,6 +3,8 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
+import { DailyUpdatesMutations } from "./mutations";
+
 export default new Vuex.Store({
   state: {
     title: "CBCode",
@@ -145,6 +147,6 @@ export default new Vuex.Store({
       return array;
     }
   },
-  mutations: {},
+  mutations: Object.assign({}, DailyUpdatesMutations),
   actions: {}
 });
