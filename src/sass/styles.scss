@@ -1,12 +1,23 @@
 @charset "utf-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
-$primary: #008bff;
+$primary: #20a8d8;
 $secondary: #00b2ff;
+$success: #4dbd74;
+$danger: #f86c6b;
+$warning: #ffc107;
+$info: #63c2de;
+
+$background: #2f353a;
 
 .success {
   background-color: $primary;
   color: white;
+}
+
+body {
+  background-color: $background;
+  color: #e3e6e9 !important;
 }
 
 $footer-background-color: #414656;
@@ -14,14 +25,7 @@ $footer-background-color: #414656;
 $family-sans-serif: "Open Sans", sans-serif;
 
 .navbar {
-  background-image: linear-gradient(
-    to right top,
-    #008bff,
-    #00a0ff,
-    #00b1ff,
-    #00c1f7,
-    #00cfee
-  );
+  background-color: #3a4149 !important;
 }
 
 .margin-bottom {
@@ -29,14 +33,7 @@ $family-sans-serif: "Open Sans", sans-serif;
 }
 
 .background-gradient {
-  background-image: linear-gradient(
-    to right top,
-    #008bff,
-    #00a0ff,
-    #00b1ff,
-    #00c1f7,
-    #00cfee
-  );
+  background-color: #3a4149;
 }
 
 .background-gradient-secondary {
@@ -63,6 +60,8 @@ a:hover {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+
+  max-width: 100% !important;
 
   -webkit-overflow-scrolling: touch;
 
