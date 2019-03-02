@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <h1 class="title is-1 has-text-centered">¿Qué es esta web?</h1>
+    <h1 class="title is-1 has-text-centered has-text-white">¿Qué es esta web?</h1>
     <p>
       Este es mi proyecto para la materia
       <b>
