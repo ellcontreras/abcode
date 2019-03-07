@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="hero background-gradient is-bold" v-if="$route.name === 'home'">
+    <div class="hero background is-bold" v-if="$route.name === 'home'">
       <div class="hero-head">
         <navbar/>
       </div>
@@ -25,7 +25,7 @@
 import Home from "./views/Home.vue";
 import Navbar from "@/components/layout/Navbar.vue";
 import Footer from "@/components/layout/Footer.vue";
-import { ADD_DAILY_UPDATE, DELETE_DAILY_UPDATE } from "./store/mutation-types";
+import { ADD_DAILY_UPDATE, UPDATE_COURSE } from "./store/mutation-types";
 
 export default {
   name: "App",
@@ -42,6 +42,9 @@ export default {
             "Se ha agregado una notificación",
             mutation.payload
           );
+          break;
+        case UPDATE_COURSE:
+          this.$toastr.success("El curso se ha guardado correctamente");
           break;
       }
     });
