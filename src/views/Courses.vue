@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="hero background-gradient-secondary">
+    <div class="hero background-secondary">
       <div class="hero-body">
         <h1 class="title is-1 has-text-centered has-text-white">Todos los cursos</h1>
       </div>

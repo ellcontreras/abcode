@@ -32,19 +32,12 @@ $family-sans-serif: "Open Sans", sans-serif;
   margin-bottom: 1em;
 }
 
-.background-gradient {
+.background {
   background-color: #3a4149;
 }
 
-.background-gradient-secondary {
-  background-image: linear-gradient(
-    to right top,
-    #00cfee,
-    #00d6e7,
-    #00dcdc,
-    #00e1cd,
-    #00e5ba
-  );
+.background-secondary {
+  background-color: #3a4149;
 }
 
 a {

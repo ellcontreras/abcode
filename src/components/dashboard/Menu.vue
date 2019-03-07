@@ -1,5 +1,5 @@
 <template>
-  <div class="hero is-primary">
+  <div class="hero background">
     <div class="hero-body">
       <figure class="image container is-128x128">
         <img
@@ -32,5 +32,8 @@
 <style scoped>
 .menu-label {
   color: whitesmoke !important;
+}
+a:hover {
+  color: white !important;
 }
 </style>

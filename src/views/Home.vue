@@ -4,7 +4,7 @@
       <div class="container is-fluid">
         <div class="hero">
           <div class="hero-body">
-            <h1 class="title is-1 has-text-centered">¿Que puedo aprender?</h1>
+            <h1 class="title is-1 has-text-centered has-text-white">¿Que puedo aprender?</h1>
             <div class="columns">
               <div class="column">
                 <div class="media">
@@ -83,9 +83,9 @@
         <br>
       </div>
 
-      <div class="hero background-gradient-secondary">
+      <div class="hero background-secondary">
         <div class="hero-body">
-          <h2 class="subtitle is-2 has-text-centered">Ultimos posts</h2>
+          <h2 class="subtitle is-2 has-text-centered has-text-white">Ultimos posts</h2>
           <div class="columns">
             <div class="column">
               <router-link to="/">
