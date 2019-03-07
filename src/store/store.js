@@ -3,7 +3,7 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-import { DailyUpdatesMutations } from "./mutations";
+import { DailyUpdatesMutations, CoursesMutations } from "./mutations";
 
 export default new Vuex.Store({
   state: {
@@ -62,50 +62,62 @@ export default new Vuex.Store({
     ],
     courses: [
       {
+        id: 1,
         name: "PSeInt",
         category: "fundamentos"
       },
       {
+        id: 2,
         name: "C++",
         category: "fundamentos"
       },
       {
+        id: 3,
         name: "C#",
         category: "poo"
       },
       {
+        id: 4,
         name: "HTML",
         category: "web"
       },
       {
+        id: 5,
         name: "CSS",
         category: "web"
       },
       {
+        id: 6,
         name: "JavaScript",
         category: "web"
       },
       {
+        id: 7,
         name: "Java",
         category: "apps"
       },
       {
+        id: 8,
         name: "Cisco Packet Tracer",
         category: "servidores"
       },
       {
+        id: 9,
         name: "DHCP",
         category: "servidores"
       },
       {
+        id: 10,
         name: "DNS",
         category: "servidores"
       },
       {
+        id: 11,
         name: "Correo",
         category: "servidores"
       },
       {
+        id: 12,
         name: "Web",
         category: "servidores"
       }
@@ -145,8 +157,19 @@ export default new Vuex.Store({
       }
 
       return array;
+    },
+    coursesPaginated: state => {
+      let arrays = [],
+        size = 3;
+      while (state.courses.length > 0)
+        arrays.push(state.courses.splice(0, size));
+
+      return arrays;
+    },
+    courseById: state => id => {
+      return state.courses.filter(course => course.id === id)[0];
     }
   },
-  mutations: Object.assign({}, DailyUpdatesMutations),
+  mutations: Object.assign({}, DailyUpdatesMutations, CoursesMutations),
   actions: {}
 });
