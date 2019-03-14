@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store/store";
 import toastr from "toastr";
+import CKEditor from "@ckeditor/ckeditor5-vue";
 import "./registerServiceWorker";
 
 import "./sass/styles.scss";
@@ -14,6 +15,8 @@ toastr.options = {
 };
 
 Vue.prototype.$toastr = toastr;
+
+Vue.use(CKEditor);
 
 new Vue({
   router,
