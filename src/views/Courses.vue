@@ -2,7 +2,7 @@
   <div>
     <div class="hero background-secondary">
       <div class="hero-body">
-        <h1 class="title is-1 has-text-centered has-text-white">Todos los cursos</h1>
+        <h1 class="title is-1 has-text-centered ">Todos los cursos</h1>
       </div>
     </div>
 
@@ -14,7 +14,7 @@
               <img :src="category.image" class="image is-96x96" :alt="category.image">
             </div>
             <div class="media-content">
-              <h3 class="subtitle is-3 has-text-white">{{ category.title }}</h3>
+              <h3 class="subtitle is-3 ">{{ category.title }}</h3>
               <p>{{ category.description }}</p>
             </div>
           </div>

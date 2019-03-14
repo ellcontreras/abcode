@@ -4,7 +4,7 @@
       <div class="container is-fluid">
         <div class="hero">
           <div class="hero-body">
-            <h1 class="title is-1 has-text-centered has-text-white">¿Que puedo aprender?</h1>
+            <h1 class="title is-1 has-text-centered">¿Que puedo aprender?</h1>
             <div class="columns">
               <div class="column">
                 <div class="media">
@@ -12,7 +12,7 @@
                     <img src="../static/luces.svg" class="image is-96x96" alt>
                   </div>
                   <div class="media-content">
-                    <h3 class="subtitle is-3 has-text-white">Fundamentos de Programación</h3>
+                    <h3 class="subtitle is-3">Fundamentos de Programación</h3>
                     <p>Eres nuevo en la programación? Estas en el lugar indicado, aqui contarás con todo lo necesario para empezar</p>
                   </div>
                 </div>
@@ -23,7 +23,7 @@
                     <img src="../static/orientado_objetos.svg" class="image is-96x96" alt>
                   </div>
                   <div class="media-content">
-                    <h3 class="subtitle is-3 has-text-white">Programación Orientada a Objetos</h3>
+                    <h3 class="subtitle is-3">Programación Orientada a Objetos</h3>
                     <p>Ya conoces los fundamentos? Que tal algo más? Aprende POO!</p>
                   </div>
                 </div>
@@ -39,7 +39,7 @@
                     <img src="../static/desarrollo_web.svg" class="image is-96x96" alt>
                   </div>
                   <div class="media-content">
-                    <h3 class="subtitle is-3 has-text-white">Desarrollo Web</h3>
+                    <h3 class="subtitle is-3">Desarrollo Web</h3>
                     <p>Domina HTML5, CSS3 y Javascript para crear hermosos sitios web!</p>
                   </div>
                 </div>
@@ -50,7 +50,7 @@
                     <img src="../static/desarrollo_apps.svg" class="image is-96x96" alt>
                   </div>
                   <div class="media-content">
-                    <h3 class="subtitle is-3 has-text-white">Desarrollo de Apps</h3>
+                    <h3 class="subtitle is-3">Desarrollo de Apps</h3>
                     <p>Aprende a desarrollar aplicaciones para dispositivos moviles.</p>
                   </div>
                 </div>
@@ -61,7 +61,7 @@
                     <img src="../static/redes.svg" class="image is-96x96" alt>
                   </div>
                   <div class="media-content">
-                    <h3 class="subtitle is-3 has-text-white">Servidores</h3>
+                    <h3 class="subtitle is-3">Servidores</h3>
                     <p>Aprende a trabajar con servidores y administrar redes de computadoras.</p>
                   </div>
                 </div>
