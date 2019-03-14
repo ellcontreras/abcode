@@ -5,9 +5,3 @@ export const DailyUpdatesMutations = {
     state.dailyUpdates.push(payload);
   }
 };
-
-export const CoursesMutations = {
-  [UPDATE_COURSE](state, payload) {
-    state.courses.push(payload);
-  }
-};

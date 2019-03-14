@@ -60,68 +60,6 @@ export default new Vuex.Store({
         color: "is-primary"
       }
     ],
-    courses: [
-      {
-        id: 1,
-        name: "PSeInt",
-        category: "fundamentos"
-      },
-      {
-        id: 2,
-        name: "C++",
-        category: "fundamentos"
-      },
-      {
-        id: 3,
-        name: "C#",
-        category: "poo"
-      },
-      {
-        id: 4,
-        name: "HTML",
-        category: "web"
-      },
-      {
-        id: 5,
-        name: "CSS",
-        category: "web"
-      },
-      {
-        id: 6,
-        name: "JavaScript",
-        category: "web"
-      },
-      {
-        id: 7,
-        name: "Java",
-        category: "apps"
-      },
-      {
-        id: 8,
-        name: "Cisco Packet Tracer",
-        category: "servidores"
-      },
-      {
-        id: 9,
-        name: "DHCP",
-        category: "servidores"
-      },
-      {
-        id: 10,
-        name: "DNS",
-        category: "servidores"
-      },
-      {
-        id: 11,
-        name: "Correo",
-        category: "servidores"
-      },
-      {
-        id: 12,
-        name: "Web",
-        category: "servidores"
-      }
-    ],
     dailyUpdates: [
       "@usuario ha terminado un curso",
       "Tienes nuevos mensajes en la bandeja",
@@ -129,46 +67,6 @@ export default new Vuex.Store({
       "Hay esto bla",
       "lorem ipsum dolor quien sabe que"
     ]
-  },
-  getters: {
-    categoryColor: state => categoryName => {
-      return state.courseCategories.filter(
-        category => category.categoryName == categoryName
-      )[0];
-    },
-    courses: state => {
-      // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-      let array = state.courses;
-
-      let currentIndex = array.length,
-        temporaryValue,
-        randomIndex;
-
-      // While there remain elements to shuffle...
-      while (0 !== currentIndex) {
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-      }
-
-      return array;
-    },
-    coursesPaginated: state => {
-      let arrays = [],
-        size = 3;
-      while (state.courses.length > 0)
-        arrays.push(state.courses.splice(0, size));
-
-      return arrays;
-    },
-    courseById: state => id => {
-      return state.courses.filter(course => course.id === id)[0];
-    }
   },
   mutations: Object.assign({}, DailyUpdatesMutations, CoursesMutations),
   actions: {}
