@@ -10,7 +10,7 @@
     <div class="field">
       <label class="label">Descripción:</label>
       <div class="control">
-        <textarea type="text" v-model="course.Description" class="textarea"></textarea>
+        <ckeditor :editor="editor" v-model="course.Description" class="color-black"/>
       </div>
     </div>
     <div class="field">
@@ -24,18 +24,20 @@
       </div>
     </div>
     <div class="control">
-      <button class="button is-link">Actualizar</button>
+      <button class="button is-link" @click="handleUpdateCourse()">Actualizar</button>
     </div>
   </div>
 </template>
 
 <script>
-import { getCourseById } from "@/services/course";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { getCourseById, updateCourse } from "@/services/course";
 
 export default {
   name: "DashboardEditCourse",
   data: () => ({
-    course: []
+    course: [],
+    editor: ClassicEditor
   }),
   beforeMount() {
     getCourseById(this.$route.params.id)
@@ -45,6 +47,26 @@ export default {
       .catch(err => {
         console.log(err);
       });
+  },
+  methods: {
+    handleUpdateCourse() {
+      updateCourse(
+        {
+          id: this.course.Id,
+          name: this.course.Name,
+          description: this.course.Description,
+          category: this.course.Category
+        },
+        this.$route.params.id
+      )
+        .then(res => {
+          this.$router.push(`/course/${this.course.Id}`);
+          this.$toastr.success("Se ha actualizado el curso exitosamente!");
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }
 };
 </script>

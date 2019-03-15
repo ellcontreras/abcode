@@ -34,6 +34,6 @@
   color: whitesmoke !important;
 }
 a:hover {
-  color: white !important;
+  color: #444 !important;
 }
 </style>
