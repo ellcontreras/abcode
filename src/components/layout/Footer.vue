@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="content has-text-centered has-text-white">
       <p>
-        <strong class="has-text-white">CBCode</strong> by
+        <strong class="has-text-white">{{ $store.state.title }}</strong> by
         <a href="https://github.com/Obsinqsob01" target="__blank">Luis Contreras</a>. The source code is licensed
         <a
           href="http://opensource.org/licenses/mit-license.php"
