@@ -36,36 +36,26 @@ import { getCourseById, updateCourse } from "@/services/course";
 export default {
   name: "DashboardEditCourse",
   data: () => ({
-    course: [],
     editor: ClassicEditor
   }),
-  beforeMount() {
-    getCourseById(this.$route.params.id)
-      .then(res => {
-        this.course = res.data;
-      })
-      .catch(err => {
-        console.log(err);
-      });
+  created() {
+    if (!this.course.Name) {
+      this.$store.dispatch("courseById", this.$route.params.id);
+    }
+  },
+  computed: {
+    course() {
+      return this.$store.getters.courseById(this.$route.params.id);
+    }
   },
   methods: {
     handleUpdateCourse() {
-      updateCourse(
-        {
-          id: this.course.Id,
-          name: this.course.Name,
-          description: this.course.Description,
-          category: this.course.Category
-        },
-        this.$route.params.id
-      )
-        .then(res => {
-          this.$router.push(`/course/${this.course.Id}`);
-          this.$toastr.success("Se ha actualizado el curso exitosamente!");
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      this.$store.dispatch("updateCourse", {
+        id: this.course.Id,
+        name: this.course.Name,
+        description: this.course.Description,
+        category: this.course.Category
+      });
     }
   }
 };
