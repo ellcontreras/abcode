@@ -41,18 +41,11 @@ export default {
   }),
   methods: {
     handleSaveCourse() {
-      saveCourse({
+      this.$store.dispatch("addCourse", {
         name: this.course.Name,
         description: this.course.Description,
         category: this.course.Category
-      })
-        .then(res => {
-          this.$router.push(`/course/${res.data.Id}`);
-          this.$toastr.success("Se ha agregado el curso exitosamente!");
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      });
     }
   }
 };

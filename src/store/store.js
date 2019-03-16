@@ -3,11 +3,16 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-import { DailyUpdatesMutations, CoursesMutations } from "./mutations";
+import { DailyUpdatesMutations, courseMutations } from "./mutations";
+import { courseActions } from "./actions";
+import { courseGetters } from "./getters";
 
 export default new Vuex.Store({
   state: {
     title: "CBCode",
+    showLoader: false,
+    courses: [],
+    course: {},
     courseCategories: [
       {
         title: "Fundamentos de Programación",
@@ -68,6 +73,7 @@ export default new Vuex.Store({
       "lorem ipsum dolor quien sabe que"
     ]
   },
-  mutations: Object.assign({}, DailyUpdatesMutations, CoursesMutations),
-  actions: {}
+  mutations: Object.assign({}, DailyUpdatesMutations, courseMutations),
+  actions: Object.assign({}, courseActions),
+  getters: Object.assign({}, courseGetters)
 });
