@@ -1,9 +1,9 @@
 <template>
-  <div class="section">
-    <span class="tag is-link">{{ course.Category }}</span>
-    <h2 class="subtitle is-2 has-text-center">{{ course.Name }}</h2>
-    <div v-html="course.Description"></div>
-  </div>
+  <el-card>
+    <el-tag type="danger">{{ course.Category | capitalize}}</el-tag>
+    <h1 class="has-text-centered">{{ course.Name }}</h1>
+    <div v-html="course.Description" class="has-text-centered"></div>
+  </el-card>
 </template>
 
 <script>

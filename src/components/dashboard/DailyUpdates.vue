@@ -1,29 +1,10 @@
 <template>
   <div>
     <h2 class="title is-2 has-text-centered">Dashboard</h2>
-    <div class="card">
-      <div class="card-content">
-        <h3 class="subtitle is-3">Actualizaciones diarias</h3>
-        <div id="scroll">
-          <div class="card" v-for="(update, key) of $store.state.dailyUpdates" :key="key">
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <span
-                    class="tag is-black"
-                    @click="$store.commit('ADD_DAILY_UPDATE', 'hola');"
-                  >Notificación</span>
-                  <p>12:05 p.m</p>
-                </div>
-                <div class="media-content">
-                  <router-link :to="`/update/${update}`">{{ update }}</router-link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <el-table :data="$store.state.dailyUpdates">
+      <el-table-column prop="date" label="Fecha" width="200px"></el-table-column>
+      <el-table-column prop="content" label="Contenido"></el-table-column>
+    </el-table>
   </div>
 </template>
 

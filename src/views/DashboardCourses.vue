@@ -1,22 +1,25 @@
 <template>
   <div>
-    <h1 class="title is-1 has-text-centered">Courses</h1>
+    <h1 class="title is-1 has-text-centered">Cursos</h1>
 
     <router-link to="/dashboard/courses/new">
-      <button class="button is-rounded is-outlined is-primary">Agregar Curso</button>
+      <el-button class="button is-rounded is-outlined is-primary">Agregar Curso</el-button>
     </router-link>
-    <hr>
+
     <course-list/>
+    <dashboard-chart-course/>
   </div>
 </template>
 
 <script>
 import CourseList from "@/components/dashboard/CourseList.vue";
+import DashboardChartCourse from '@/components/charts/DashboardChartCourse.vue'
 
 export default {
   name: "DashboardComponents",
   components: {
-    CourseList
+    CourseList,
+    DashboardChartCourse
   }
 };
 </script>

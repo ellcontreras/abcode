@@ -1,135 +1,90 @@
 <template>
   <div>
-    <section class="section">
-      <div class="container is-fluid">
-        <div class="hero">
-          <div class="hero-body">
-            <h1 class="title is-1 has-text-centered">¿Que puedo aprender?</h1>
-            <div class="columns">
-              <div class="column">
-                <div class="media">
-                  <div class="media-left">
-                    <img src="../static/luces.svg" class="image is-96x96" alt>
-                  </div>
-                  <div class="media-content">
-                    <h3 class="subtitle is-3">Fundamentos de Programación</h3>
-                    <p>Eres nuevo en la programación? Estas en el lugar indicado, aqui contarás con todo lo necesario para empezar</p>
-                  </div>
-                </div>
+    <el-container>
+      <el-main>
+        <el-card shadow="always">
+          <el-row type="flex">
+            <el-col center>
+              <div class="has-text-centered">
+                <img src="../static/luces.svg" alt>
+                <h1>Fundamentos de programación</h1>
+                <p>Vas empezando? Los fundamentos serán geniales para ti</p>
               </div>
-              <div class="column">
-                <div class="media">
-                  <div class="media-left">
-                    <img src="../static/orientado_objetos.svg" class="image is-96x96" alt>
-                  </div>
-                  <div class="media-content">
-                    <h3 class="subtitle is-3">Programación Orientada a Objetos</h3>
-                    <p>Ya conoces los fundamentos? Que tal algo más? Aprende POO!</p>
-                  </div>
-                </div>
+            </el-col>
+            <el-col>
+              <div class="has-text-centered">
+                <img src="../static/orientado_objetos.svg" alt>
+                <h1>Programación Orientada a Objetos</h1>
+                <p>Ya eres más avanzado, prueba con POO</p>
               </div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <div class="columns">
-              <div class="column">
-                <div class="media">
-                  <div class="media-left">
-                    <img src="../static/desarrollo_web.svg" class="image is-96x96" alt>
-                  </div>
-                  <div class="media-content">
-                    <h3 class="subtitle is-3">Desarrollo Web</h3>
-                    <p>Domina HTML5, CSS3 y Javascript para crear hermosos sitios web!</p>
-                  </div>
-                </div>
+            </el-col>
+            <el-col>
+              <div class="has-text-centered">
+                <img src="../static/desarrollo_web.svg" alt>
+                <h1>Desarrollo web</h1>
+                <p>Te gustaría aprender a desarrollar sitios web</p>
               </div>
-              <div class="column">
-                <div class="media">
-                  <div class="media-left">
-                    <img src="../static/desarrollo_apps.svg" class="image is-96x96" alt>
-                  </div>
-                  <div class="media-content">
-                    <h3 class="subtitle is-3">Desarrollo de Apps</h3>
-                    <p>Aprende a desarrollar aplicaciones para dispositivos moviles.</p>
-                  </div>
-                </div>
+            </el-col>
+          </el-row>
+          <el-row type="flex">
+            <el-col>
+              <div class="has-text-centered">
+                <img src="../static/desarrollo_apps.svg" alt>
+                <h1>Desarrollo Movil</h1>
+                <p>Aprende a hacer aplicaciones para telefonos celulares</p>
               </div>
-              <div class="column">
-                <div class="media">
-                  <div class="media-left">
-                    <img src="../static/redes.svg" class="image is-96x96" alt>
-                  </div>
-                  <div class="media-content">
-                    <h3 class="subtitle is-3">Servidores</h3>
-                    <p>Aprende a trabajar con servidores y administrar redes de computadoras.</p>
-                  </div>
-                </div>
+            </el-col>
+            <el-col>
+              <div class="has-text-centered">
+                <img src="../static/redes.svg" alt>
+                <h1>Servidores y Redes</h1>
+                <p>Aprende sobre servidores y redes</p>
               </div>
-            </div>
+            </el-col>
+          </el-row>
+          <div class="has-text-centered">
+            <el-button type="primary" plain round @click="$router.push('/courses')">Explorar Cursos</el-button>
           </div>
-        </div>
-
-        <div class="columns">
-          <div class="column"></div>
-          <div class="column">
-            <button
-              @click="$router.push({name: 'courses'})"
-              class="button is-large is-fullwidth is-primary is-outlined is-rounded"
-            >Navegar por los cursos</button>
-          </div>
-          <div class="column"></div>
-        </div>
-        <br>
-      </div>
-
-      <div class="hero background-secondary">
-        <div class="hero-body">
-          <h2 class="subtitle is-2 has-text-centered has-text-white">Ultimos posts</h2>
-          <div class="columns">
-            <div class="column">
-              <router-link to="/">
-                <div class="card">
-                  <div class="card-content">
-                    <img src="../static/android_icon.svg" class="image is-128x128" alt>
-                    <h4 class="subtitle is-4">Lorem ipsum</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam ducimus culpa minus doloremque. Saepe magnam obcaecati natus nemo ab neque maiores veritatis! Debitis recusandae laudantium optio cumque adipisci sed eum.</p>
-                  </div>
-                </div>
-              </router-link>
-            </div>
-            <div class="column">
-              <router-link to="/">
-                <div class="card">
-                  <div class="card-content">
-                    <img src="../static/c_icon.svg" class="image is-128x128" alt>
-                    <h4 class="subtitle is-4">Lorem ipsum</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam ducimus culpa minus doloremque. Saepe magnam obcaecati natus nemo ab neque maiores veritatis! Debitis recusandae laudantium optio cumque adipisci sed eum.</p>
-                  </div>
-                </div>
-              </router-link>
-            </div>
-            <div class="column">
-              <router-link to="/">
-                <div class="card">
-                  <div class="card-content">
-                    <img src="../static/c_sharp.svg" class="image is-128x128" alt>
-                    <h4 class="subtitle is-4">Lorem ipsum</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam ducimus culpa minus doloremque. Saepe magnam obcaecati natus nemo ab neque maiores veritatis! Debitis recusandae laudantium optio cumque adipisci sed eum.</p>
-                  </div>
-                </div>
-              </router-link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </el-card>
+      </el-main>
+    </el-container>
+    <el-container>
+      <el-main v-if="$store.state.courses.length > 0">
+        <h1 class="has-text-centered">Ultimos cursos</h1>
+        <el-row class="has-text-centered" type="flex">
+          <el-col v-for="(course, k) in (0,3)" :key="k">
+            <el-card class="box-card">
+              <h3>{{ $store.state.courses[k].Name }}</h3>
+              <p v-html="$store.state.courses[k].Description"></p>
+              <el-button>Comenzar curso</el-button>
+            </el-card>
+          </el-col>
+        </el-row>
+      </el-main>
+      <el-main v-else>
+        <h1 class="has-text-centered">No hay cursos disponibles aún</h1>
+      </el-main>
+    </el-container>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
+  created() {
+    this.$store.dispatch("allCourses");
+  }
 };
 </script>
+
+<style scoped>
+img {
+  width: 100px;
+}
+.box-card {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+</style>
 
