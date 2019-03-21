@@ -1,8 +1,8 @@
 <template>
-  <footer class="footer">
-    <div class="content has-text-centered has-text-white">
+  <div class="my-footer">
+    <div class="has-text-centered">
       <p>
-        <strong class="has-text-white">{{ $store.state.title }}</strong> by
+        <strong>{{ $store.state.title }}</strong> by
         <a href="https://github.com/Obsinqsob01" target="__blank">Luis Contreras</a>. The source code is licensed
         <a
           href="http://opensource.org/licenses/mit-license.php"
@@ -10,20 +10,13 @@
         >MIT</a>.
       </p>
     </div>
-  </footer>
+  </div>
 </template>
 
 <style scoped>
 a {
   color: #4681df !important;
 }
-
-a:hover {
-  color: whitesmoke !important;
-}
-
-.footer {
-  margin-top: 3em;
-}
 </style>
+
 

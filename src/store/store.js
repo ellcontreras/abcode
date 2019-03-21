@@ -66,11 +66,26 @@ export default new Vuex.Store({
       }
     ],
     dailyUpdates: [
-      "@usuario ha terminado un curso",
-      "Tienes nuevos mensajes en la bandeja",
-      "Hay un nuevo usuario",
-      "Hay esto bla",
-      "lorem ipsum dolor quien sabe que"
+      {
+        id: 0,
+        date: new Date(Date.now()).toLocaleString(),
+        content: "@usuario ha terminado un curso"
+      },
+      {
+        id: 1,
+        date: new Date(Date.now()).toLocaleString(),
+        content: "Tienes nuevos mensajes en la bandeja"
+      },
+      {
+        id: 2,
+        date: new Date(Date.now()).toLocaleString(),
+        content: "Hay un nuevo usuario"
+      },
+      {
+        id: 3,
+        date: new Date(Date.now()).toLocaleString(),
+        content: "Otra notificación"
+      }
     ]
   },
   mutations: Object.assign({}, DailyUpdatesMutations, courseMutations),

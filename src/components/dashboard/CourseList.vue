@@ -5,41 +5,34 @@
     </p>
     <br>
     <div class="container">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Categoria</th>
-            <th>Operaciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="course in courses" :key="course.Id">
-            <th>{{ course.Id }}</th>
-            <th>{{ course.Name }}</th>
-            <th v-html="course.Description"></th>
-            <th>{{ course.Category }}</th>
-            <th>
-              <div class="has-text-centered">
-                <span class="icon" title="Eliminar este curso">
-                  <font-awesome-icon icon="trash" @click="deleteCourse(course.Id)"/>
-                </span>
-                <span class="icon" title="Editar este curso">
-                  <font-awesome-icon
-                    icon="pen"
-                    @click="$router.push(`/dashboard/courses/edit/${course.Id}`)"
-                  />
-                </span>
-                <span class="icon" title="Ver este curso">
-                  <font-awesome-icon icon="eye" @click="$router.push(`/course/${course.Id}`)"/>
-                </span>
-              </div>
-            </th>
-          </tr>
-        </tbody>
-      </table>
+      <el-table :data="courses">
+        <el-table-column prop="Id" label="ID"></el-table-column>
+        <el-table-column prop="Name" label="Nombre"></el-table-column>
+        <el-table-column label="Descripción">
+          <template slot-scope="scope">
+            <div v-html="scope.row.Description"></div>
+          </template>
+        </el-table-column>
+        <el-table-column prop="Category" label="Categoria"></el-table-column>
+        <el-table-column label="Operaciones">
+          <template slot-scope="scope">
+            <div>
+              <span class="icon" title="Eliminar este curso">
+                <font-awesome-icon icon="trash" @click="deleteCourse(scope.row.Id)"/>
+              </span>
+              <span class="icon" title="Editar este curso">
+                <font-awesome-icon
+                  icon="pen"
+                  @click="$router.push(`/dashboard/courses/edit/${scope.row.Id}`)"
+                />
+              </span>
+              <span class="icon" title="Ver este curso">
+                <font-awesome-icon icon="eye" @click="$router.push(`/course/${scope.row.Id}`)"/>
+              </span>
+            </div>
+          </template>
+        </el-table-column>
+      </el-table>
     </div>
   </div>
 </template>

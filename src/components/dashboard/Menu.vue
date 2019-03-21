@@ -1,39 +1,31 @@
 <template>
-  <div class="hero background">
-    <div class="hero-body">
-      <figure class="image container is-128x128">
-        <img
-          src="https://amp.businessinsider.com/images/5899ffcf6e09a897008b5c04-750-750.jpg"
-          alt="profile image"
-        >
-      </figure>
-
-      <p class="has-text-centered">
-        <b>My name</b>
-      </p>
-      <aside class="menu">
-        <p class="menu-label">General</p>
-        <ul class="menu-list">
-          <li>
-            <router-link to="/dashboard">Dashboard</router-link>
-          </li>
-        </ul>
-        <p class="menu-label">Courses</p>
-        <ul class="menu-list">
-          <li>
-            <router-link to="/dashboard/courses">Cursos</router-link>
-          </li>
-        </ul>
-      </aside>
+  <el-menu mode="vertical" background-color="#304156" text-color="#bfcbd9" class="verticalMenu">
+    <div class="has-text-centered">
+      <img
+        src="https://amp.businessinsider.com/images/5899ffcf6e09a897008b5c04-750-750.jpg"
+        alt="profile image"
+      >
+      <p>Name</p>
     </div>
-  </div>
+    <router-link to="/dashboard">
+      <el-menu-item>Dashboard</el-menu-item>
+    </router-link>
+    <router-link to="/dashboard/courses">
+      <el-menu-item>Cursos</el-menu-item>
+    </router-link>
+  </el-menu>
 </template>
 
 <style scoped>
-.menu-label {
-  color: whitesmoke !important;
+a {
+  color: #bfcbd9;
 }
-a:hover {
-  color: #444 !important;
+img {
+  margin-top: 2em;
+  width: 100px;
+}
+.verticalMenu {
+  width: 250px;
+  color: #bfcbd9;
 }
 </style>

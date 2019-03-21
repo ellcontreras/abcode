@@ -7,6 +7,9 @@ import CKEditor from "@ckeditor/ckeditor5-vue";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTrash, faPen, faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import ElementUI from "element-ui";
+import VueApexCharts from "vue-apexcharts";
+import "element-ui/lib/theme-chalk/index.css";
 import "./registerServiceWorker";
 
 import "./sass/styles.scss";
@@ -21,8 +24,17 @@ Vue.prototype.$toastr = toastr;
 
 library.add(faTrash, faPen, faEye);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
+Vue.component("apexchart", VueApexCharts);
 
 Vue.use(CKEditor);
+
+Vue.use(ElementUI);
+
+Vue.filter('capitalize', function (value) {
+  if (!value) return ''
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+})
 
 new Vue({
   router,

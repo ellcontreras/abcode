@@ -1,14 +1,19 @@
 <template>
-  <div class="columns">
-    <div class="column is-one-quarter">
-      <Menu/>
-    </div>
-    <div class="column">
-      <div v-if="$route.name === 'dashboard'">
-        <daily-updates/>
-      </div>
-      <router-view></router-view>
-    </div>
+  <div>
+    <el-row type="flex">
+      <el-col :span="4">
+        <Menu/>
+      </el-col>
+      <el-col>
+        <el-card shadow="always">
+          <div v-if="$route.name === 'dashboard'">
+            <daily-updates/>
+            <dashboard-chart-user/>
+          </div>
+          <router-view></router-view>
+        </el-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -16,13 +21,15 @@
 import AnalyticsUser from "@/components/dashboard/AnalyticsUser.vue";
 import DailyUpdates from "@/components/dashboard/DailyUpdates.vue";
 import Menu from "@/components/dashboard/Menu.vue";
+import DashboardChartUser from "@/components/charts/DashboardChartUser.vue";
 
 export default {
   name: "Dashboard",
   components: {
     AnalyticsUser,
     Menu,
-    DailyUpdates
+    DailyUpdates,
+    DashboardChartUser
   }
 };
 </script>

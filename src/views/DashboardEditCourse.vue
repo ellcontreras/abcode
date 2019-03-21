@@ -1,31 +1,23 @@
 <template>
   <div>
-    <h2 class="title is-2 has-text-centered">Editar curso</h2>
-    <div class="field">
-      <label class="label">Nombre:</label>
-      <div class="control">
-        <input type="text" v-model="course.Name" class="input">
-      </div>
-    </div>
-    <div class="field">
-      <label class="label">Descripción:</label>
-      <div class="control">
+    <h2 class="title is-2 has-text-centered">Agregar nuevo curso</h2>
+
+    <el-form>
+      <el-form-item label="Nombre:">
+        <el-input v-model="course.Name"></el-input>
+      </el-form-item>
+      <el-form-item label="Descripción:">
         <ckeditor :editor="editor" v-model="course.Description" class="color-black"/>
-      </div>
-    </div>
-    <div class="field">
-      <label class="label">Categoria:</label>
-      <div class="control">
-        <div class="select">
-          <select v-model="course.Category">
-            <option value="fundamentos">Fundamentos de programación</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="control">
-      <button class="button is-link" @click="handleUpdateCourse()">Actualizar</button>
-    </div>
+      </el-form-item>
+      <el-form-item label="Categoría:">
+        <el-select v-model="course.Category">
+          <el-option label="Fundamentos de programación" value="fundamentos"></el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="handleUpdateCourse()">Actualizar</el-button>
+      </el-form-item>
+    </el-form>
   </div>
 </template>
 
