@@ -49,10 +49,10 @@
       </el-main>
     </el-container>
     <el-container>
-      <el-main v-if="$store.state.courses.length > 0">
+      <el-main v-if="$store.state.courses.length > 0 && $store.state.courses.length < 4">
         <h1 class="has-text-centered">Ultimos cursos</h1>
         <el-row class="has-text-centered" type="flex">
-          <el-col v-for="(course, k) in (0,3)" :key="k">
+          <el-col v-for="(course, k) in (0,$store.state.courses.length)" :key="k">
             <el-card class="box-card">
               <h3>{{ $store.state.courses[k].Name }}</h3>
               <p v-html="$store.state.courses[k].Description"></p>
