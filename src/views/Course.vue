@@ -18,14 +18,12 @@ import { getCourseById } from "@/services/course";
 export default {
   name: "Course",
   created() {
-    if (!this.course.Name) {
-      this.$store.dispatch("courseById", this.$route.params.id);
+    if (!this.course) {
+      this.$router.push("/404");
     }
-
-    if (!this.temas) {
-      this.$store.dispatch("allTemas");
-      this.$store.dispatch("allTemasByCourseId", this.$route.params.id);
-    }
+  },
+  beforeMount() {
+    this.callCourseDispatcher();
   },
   computed: {
     course() {
@@ -36,6 +34,11 @@ export default {
     }
   },
   methods: {
+    callCourseDispatcher() {
+      this.$store.dispatch("courseById", this.$route.params.id);
+      this.$store.dispatch("allTemas");
+      this.$store.dispatch("allTemasByCourseId", this.$route.params.id);
+    },
     handleNodeClick(tema) {
       this.$router.push(`/course/${this.course.Id}/tema/${tema.Id}`);
     }
