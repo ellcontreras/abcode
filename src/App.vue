@@ -32,6 +32,10 @@ export default {
     Navbar,
     Footer
   },
+  beforeCreate() {
+    this.$store.dispatch("allCourses");
+    this.$store.dispatch("allTemas");
+  },
   created() {
     this.$store.subscribe(mutation => {
       switch (mutation.type) {
