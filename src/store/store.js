@@ -17,6 +17,7 @@ export default new Vuex.Store({
     showLoader: false,
     courses: [],
     course: {},
+    tema: [],
     temas: [],
     temasByCourse: [],
     course: {},

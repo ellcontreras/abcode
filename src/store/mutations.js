@@ -93,6 +93,7 @@ export const temaMutations = {
   },
   [TEMA_BY_ID_BY_COURSE_SUCCESS](state, payload) {
     state.showLoader = false;
+    console.log("Recibo de forma correcta", payload);
     state.tema = payload;
   },
   [ALL_TEMAS_BY_COURSE_ID](state, payload) {

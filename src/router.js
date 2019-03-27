@@ -12,6 +12,7 @@ import DashboardTemas from "./views/DashboardTemas.vue";
 import DashboardNewTema from "./views/DashboardNewTema.vue";
 import DashboardEditTema from "./views/DashboardEditTema.vue";
 import PageNotFound from "./views/PageNotFound.vue";
+import Tema from "./views/Tema.vue";
 
 Vue.use(Router);
 
@@ -36,6 +37,11 @@ export default new Router({
       path: "/course/:id",
       name: "course",
       component: Course
+    },
+    {
+      path: "/course/:courseId/tema/:temaId",
+      name: "tema",
+      component: Tema
     },
     {
       path: "/dashboard",
