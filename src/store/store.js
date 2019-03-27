@@ -3,15 +3,22 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-import { DailyUpdatesMutations, courseMutations } from "./mutations";
-import { courseActions } from "./actions";
-import { courseGetters } from "./getters";
+import {
+  DailyUpdatesMutations,
+  courseMutations,
+  temaMutations
+} from "./mutations";
+import { courseActions, temaActions } from "./actions";
+import { courseGetters, temaGetters } from "./getters";
 
 export default new Vuex.Store({
   state: {
     title: "CBCode",
     showLoader: false,
     courses: [],
+    course: {},
+    temas: [],
+    temasByCourse: [],
     course: {},
     courseCategories: [
       {
@@ -88,7 +95,12 @@ export default new Vuex.Store({
       }
     ]
   },
-  mutations: Object.assign({}, DailyUpdatesMutations, courseMutations),
-  actions: Object.assign({}, courseActions),
-  getters: Object.assign({}, courseGetters)
+  mutations: Object.assign(
+    {},
+    DailyUpdatesMutations,
+    courseMutations,
+    temaMutations
+  ),
+  actions: Object.assign({}, courseActions, temaActions),
+  getters: Object.assign({}, courseGetters, temaGetters)
 });
