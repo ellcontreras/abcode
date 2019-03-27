@@ -1,4 +1,5 @@
 import axios from "axios";
+import router from "../router";
 import { API_BASE } from "../config";
 import {
   ALL_COURSES,
@@ -81,8 +82,11 @@ export const temaActions = {
   },
   temaByIdByCourse({ commit }, payload) {
     commit(TEMA_BY_ID_BY_COURSE);
+    if (payload.courseId === undefined || payload.temaId === undefined) {
+      router.push("/404");
+    }
     axios
-      .get(`${API_BASE}/tema/${payload.courseId}/${payload.id}`)
+      .get(`${API_BASE}/tema/${payload.courseId}/${payload.temaId}`)
       .then(res => {
         commit(TEMA_BY_ID_BY_COURSE_SUCCESS, res.data);
       });
