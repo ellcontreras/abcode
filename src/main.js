@@ -12,7 +12,10 @@ import VueApexCharts from "vue-apexcharts";
 import "element-ui/lib/theme-chalk/index.css";
 import "./registerServiceWorker";
 
+import "toastr/build/toastr.min.css";
 import "./sass/styles.scss";
+
+import locale from "element-ui/lib/locale/lang/es";
 
 Vue.config.productionTip = false;
 
@@ -28,13 +31,13 @@ Vue.component("apexchart", VueApexCharts);
 
 Vue.use(CKEditor);
 
-Vue.use(ElementUI);
+Vue.use(ElementUI, { locale });
 
-Vue.filter('capitalize', function (value) {
-  if (!value) return ''
-  value = value.toString()
-  return value.charAt(0).toUpperCase() + value.slice(1)
-})
+Vue.filter("capitalize", function(value) {
+  if (!value) return "";
+  value = value.toString();
+  return value.charAt(0).toUpperCase() + value.slice(1);
+});
 
 new Vue({
   router,
