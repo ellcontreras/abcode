@@ -22,7 +22,12 @@ import {
   ADD_DAILY_UPDATE,
   UPDATE_COURSE,
   ADD_COURSE_SUCCESS,
-  REMOVE_COURSE_SUCCESS
+  REMOVE_COURSE_SUCCESS,
+  ADD_TEMA,
+  ADD_TEMA_SUCCESS,
+  UPDATE_COURSE_SUCCESS,
+  UPDATE_TEMA_SUCCESS,
+  REMOVE_TEMA_SUCCESS
 } from "./store/mutation-types";
 
 export default {
@@ -31,6 +36,10 @@ export default {
     Home,
     Navbar,
     Footer
+  },
+  beforeCreate() {
+    this.$store.dispatch("allCourses");
+    this.$store.dispatch("allTemas");
   },
   created() {
     this.$store.subscribe(mutation => {
@@ -44,11 +53,20 @@ export default {
         case ADD_COURSE_SUCCESS:
           this.$toastr.success("Curso agregado");
           break;
-        case UPDATE_COURSE:
+        case UPDATE_COURSE_SUCCESS:
           this.$toastr.success("El curso se ha guardado correctamente");
           break;
         case REMOVE_COURSE_SUCCESS:
           this.$toastr.info("El curso se ha borrado con exito");
+          break;
+        case ADD_TEMA_SUCCESS:
+          this.$toastr.success("Tema agregado");
+          break;
+        case UPDATE_TEMA_SUCCESS:
+          this.$toastr.success("El tema se ha guardado correctamente");
+          break;
+        case REMOVE_TEMA_SUCCESS:
+          this.$toastr.info("El tema se ha borrado con exito");
           break;
       }
     });

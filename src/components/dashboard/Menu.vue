@@ -13,6 +13,9 @@
     <router-link to="/dashboard/courses">
       <el-menu-item>Cursos</el-menu-item>
     </router-link>
+    <router-link to="/dashboard/temas">
+      <el-menu-item>Temas</el-menu-item>
+    </router-link>
   </el-menu>
 </template>
 
