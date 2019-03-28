@@ -1,8 +1,6 @@
 <template>
-  <div class="hero is-large is-success">
-    <div class="hero-body">
-      <h1 class="title is-1 has-text-centered">Error 404</h1>
-      <h2 class="subtitle is-2 has-text-centered">La página solicitada no ha sido encontrada.</h2>
-    </div>
-  </div>
+  <el-card class="has-text-centered">
+    <img src="@/assets/404-error.svg" class="image is-square">
+    <h1>La página solicitada no ha sido encontrada.</h1>
+  </el-card>
 </template>
