@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import AnalyticsUser from "@/components/dashboard/AnalyticsUser.vue";
 import DailyUpdates from "@/components/dashboard/DailyUpdates.vue";
 import Menu from "@/components/dashboard/Menu.vue";
 import DashboardChartUser from "@/components/charts/DashboardChartUser.vue";
@@ -26,7 +25,6 @@ import DashboardChartUser from "@/components/charts/DashboardChartUser.vue";
 export default {
   name: "Dashboard",
   components: {
-    AnalyticsUser,
     Menu,
     DailyUpdates,
     DashboardChartUser

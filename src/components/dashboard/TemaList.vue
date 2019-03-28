@@ -51,8 +51,6 @@
 </template>
 
 <script>
-import { getAllCourses, deleteCourseById } from "@/services/course";
-
 export default {
   name: "CourseList",
   computed: {

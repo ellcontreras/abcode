@@ -23,7 +23,6 @@
 
 <script>
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { getCourseById, updateCourse } from "@/services/course";
 
 export default {
   name: "DashboardEditCourse",

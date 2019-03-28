@@ -13,8 +13,6 @@
 </template>
 
 <script>
-import { getCourseById } from "@/services/course";
-
 export default {
   name: "Course",
   created() {
