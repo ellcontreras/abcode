@@ -23,7 +23,19 @@ import {
   ALL_TEMAS,
   ALL_TEMAS_SUCCESS,
   ALL_TEMAS_BY_COURSE_ID,
-  ALL_TEMAS_BY_COURSE_ID_SUCCESS
+  ALL_TEMAS_BY_COURSE_ID_SUCCESS,
+  ALL_LESSONS,
+  ALL_LESSONS_SUCCESS,
+  LESSON_BY_ID_BY_TEMA,
+  LESSON_BY_ID_BY_TEMA_SUCCESS,
+  ALL_LESSONS_BY_TEMA_ID,
+  ALL_LESSONS_BY_TEMA_ID_SUCCESS,
+  ADD_LESSON,
+  ADD_LESSON_SUCCESS,
+  UPDATE_LESSON,
+  UPDATE_LESSON_SUCCESS,
+  REMOVE_LESSON,
+  REMOVE_LESSON_SUCCESS
 } from "./mutation-types";
 
 export const DailyUpdatesMutations = {
@@ -133,5 +145,61 @@ export const temaMutations = {
     state.showLoader = false;
     const index = state.temas.findIndex(c => c.Id === payload);
     state.temas.splice(index, 1);
+  }
+};
+
+export const lessonMutations = {
+  [ALL_LESSONS](state) {
+    state.showLoader = true;
+  },
+  [ALL_LESSONS_SUCCESS](state, payload) {
+    state.showLoader = false;
+    state.lessons = payload;
+  },
+  [LESSON_BY_ID_BY_TEMA](state) {
+    state.showLoader = true;
+  },
+  [LESSON_BY_ID_BY_TEMA_SUCCESS](state, payload) {
+    state.showLoader = false;
+    console.log("Recibo de forma correcta", payload);
+    state.lesson = payload;
+  },
+  [ALL_LESSONS_BY_TEMA_ID](state, payload) {
+    state.showLoader = true;
+  },
+  [ALL_LESSONS_BY_TEMA_ID_SUCCESS](state, payload) {
+    state.showLoader = false;
+    state.lessonsByTema = payload;
+  },
+  [ADD_LESSON]: state => {
+    state.showLoader = true;
+  },
+  [ADD_LESSON_SUCCESS]: (state, payload) => {
+    state.showLoader = false;
+    state.lessons.push(payload);
+
+    router.push(`/course/${payload.Tema.Course.Id}/${payload.Tema.Id}`);
+  },
+  [UPDATE_LESSON]: state => {
+    state.showLoader = true;
+  },
+  [UPDATE_LESSON_SUCCESS]: (state, payload) => {
+    state.showLoader = false;
+    state.lessons = state.lessons.map(t => {
+      if (t.Tema.Id === payload.tema) {
+        return payload;
+      }
+      return t;
+    });
+
+    router.push(`/course/${payload.Tema.Course.Id}/${payload.Tema.Id}`);
+  },
+  [REMOVE_LESSON]: state => {
+    state.showLoader = true;
+  },
+  [REMOVE_LESSON_SUCCESS]: (state, payload) => {
+    state.showLoader = false;
+    const index = state.lessons.findIndex(c => c.Id === payload);
+    state.lessons.splice(index, 1);
   }
 };

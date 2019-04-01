@@ -6,10 +6,11 @@ Vue.use(Vuex);
 import {
   DailyUpdatesMutations,
   courseMutations,
-  temaMutations
+  temaMutations,
+  lessonMutations
 } from "./mutations";
-import { courseActions, temaActions } from "./actions";
-import { courseGetters, temaGetters } from "./getters";
+import { courseActions, temaActions, lessonActions } from "./actions";
+import { courseGetters, temaGetters, lessonGetters } from "./getters";
 
 export default new Vuex.Store({
   state: {
@@ -19,7 +20,10 @@ export default new Vuex.Store({
     course: {},
     tema: [],
     temas: [],
+    lesson: [],
+    lessons: [],
     temasByCourse: [],
+    lessonsByTema: [],
     course: {},
     courseCategories: [
       {
@@ -100,8 +104,9 @@ export default new Vuex.Store({
     {},
     DailyUpdatesMutations,
     courseMutations,
-    temaMutations
+    temaMutations,
+    lessonMutations
   ),
-  actions: Object.assign({}, courseActions, temaActions),
-  getters: Object.assign({}, courseGetters, temaGetters)
+  actions: Object.assign({}, courseActions, temaActions, lessonActions),
+  getters: Object.assign({}, courseGetters, temaGetters, lessonGetters)
 });
