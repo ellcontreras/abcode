@@ -11,6 +11,8 @@ import DashboardNewCourse from "./views/DashboardNewCourse.vue";
 import DashboardTemas from "./views/DashboardTemas.vue";
 import DashboardNewTema from "./views/DashboardNewTema.vue";
 import DashboardEditTema from "./views/DashboardEditTema.vue";
+import DashboardLessons from "./views/DashboardLessons.vue";
+import DashboardNewLesson from "./views/DashboardNewLesson.vue";
 import PageNotFound from "./views/PageNotFound.vue";
 import Tema from "./views/Tema.vue";
 
@@ -77,6 +79,16 @@ export default new Router({
           path: "temas/edit/:id",
           name: "dashboard edit tema",
           component: DashboardEditTema
+        },
+        {
+          path: "lessons",
+          name: "dashboard lessons",
+          component: DashboardLessons
+        },
+        {
+          path: "lessons/new",
+          name: "dashboard new lesson",
+          component: DashboardNewLesson
         }
       ]
     },
