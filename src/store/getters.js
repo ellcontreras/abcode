@@ -1,6 +1,6 @@
 export const courseGetters = {
   allCourses: state => {
-    return state.courses;
+    return state.courses || [];
   },
   courseById: (state, getters) => id => {
     if (getters.allCourses.length !== 0) {
@@ -13,7 +13,7 @@ export const courseGetters = {
 
 export const temaGetters = {
   allTemas: state => {
-    return state.temas;
+    return state.temas || [];
   },
   temaById: (state, getters) => id => {
     if (getters.allTemas.length !== 0) {
@@ -24,7 +24,9 @@ export const temaGetters = {
   },
   temaByCourseId: (state, getters) => courseId => {
     if (getters.allTemas.length !== 0) {
-      return getters.allTemas.filter(t => t.Course.Id === parseInt(courseId));
+      return getters.allTemas.filter(
+        t => parseInt(t.Course.Id) === parseInt(courseId)
+      );
     } else {
       return state.temasByCourse;
     }
@@ -33,7 +35,7 @@ export const temaGetters = {
 
 export const lessonGetters = {
   allLessons: state => {
-    return state.lessons;
+    return state.lessons || [];
   },
   lessonById: (state, getters) => id => {
     if (getters.allLessons.length !== 0) {
@@ -44,7 +46,9 @@ export const lessonGetters = {
   },
   lessonByTemaId: (state, getters) => temaId => {
     if (getters.allLessons.length !== 0) {
-      return getters.allTemas.filter(t => t.tema.Id === parseInt(temaId));
+      return getters.allLessons.filter(
+        l => parseInt(l.Tema.Id) === parseInt(temaId)
+      );
     } else {
       return state.lessonsByTema;
     }
