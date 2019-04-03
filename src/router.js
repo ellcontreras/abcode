@@ -14,6 +14,7 @@ import DashboardEditTema from "./views/DashboardEditTema.vue";
 import DashboardLessons from "./views/DashboardLessons.vue";
 import DashboardNewLesson from "./views/DashboardNewLesson.vue";
 import PageNotFound from "./views/PageNotFound.vue";
+import Lesson from "./views/Lesson.vue";
 import Tema from "./views/Tema.vue";
 
 Vue.use(Router);
@@ -91,6 +92,11 @@ export default new Router({
           component: DashboardNewLesson
         }
       ]
+    },
+    {
+      path: "/lesson/:id",
+      name: "Lesson",
+      component: Lesson
     },
     {
       path: "*",
