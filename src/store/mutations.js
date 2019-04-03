@@ -178,9 +178,7 @@ export const lessonMutations = {
     state.showLoader = false;
     state.lessons.push(payload);
 
-    router.push(
-      `/course/${payload.Tema.Course.Id}/${payload.Tema.Id}/${payload.Id}`
-    );
+    router.push(`/lesson/${payload.Id}`);
   },
   [UPDATE_LESSON]: state => {
     state.showLoader = true;
@@ -194,7 +192,7 @@ export const lessonMutations = {
       return t;
     });
 
-    router.push(`/course/${payload.Tema.Course.Id}/${payload.Tema.Id}`);
+    router.push(`/lesson/${payload.Id}`);
   },
   [REMOVE_LESSON]: state => {
     state.showLoader = true;
