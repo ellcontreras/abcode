@@ -6,9 +6,7 @@
       <el-form-item label="Nombre:">
         <el-input v-model="course.Name"></el-input>
       </el-form-item>
-      <el-form-item label="Descripción:">
-        <ckeditor :editor="editor" v-model="course.Description" class="color-black"/>
-      </el-form-item>
+      <quill-editor v-model="course.Description"/>
       <el-form-item label="Categoría:">
         <el-select v-model="course.Category">
           <el-option label="Fundamentos de programación" value="fundamentos"></el-option>
@@ -22,13 +20,8 @@
 </template>
 
 <script>
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-
 export default {
   name: "DashboardEditCourse",
-  data: () => ({
-    editor: ClassicEditor
-  }),
   created() {
     if (!this.course.Name) {
       this.$store.dispatch("courseById", this.$route.params.id);

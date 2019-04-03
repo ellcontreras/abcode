@@ -6,12 +6,15 @@
       <el-form-item label="Nombre:">
         <el-input v-model="course.Name"></el-input>
       </el-form-item>
-      <el-form-item label="Descripción:">
-        <ckeditor :editor="editor" v-model="course.Description" class="color-black"/>
-      </el-form-item>
+      <quill-editor v-model="course.Description"/>
       <el-form-item label="Categoría:">
         <el-select v-model="course.Category">
-          <el-option label="Fundamentos de programación" value="fundamentos"></el-option>
+          <el-option
+            v-for="category in $store.getters.allCategories"
+            :key="category.title"
+            :label="category.title"
+            :value="category.categoryName"
+          ></el-option>
         </el-select>
       </el-form-item>
       <el-form-item>
@@ -22,13 +25,10 @@
 </template>
 
 <script>
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-
 export default {
   name: "DashboardNewCourse",
   data: () => ({
-    course: [],
-    editor: ClassicEditor
+    course: []
   }),
   methods: {
     handleSaveCourse() {
