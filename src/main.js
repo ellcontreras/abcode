@@ -3,7 +3,6 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store/store";
 import toastr from "toastr";
-import CKEditor from "@ckeditor/ckeditor5-vue";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTrash, faPen, faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -37,8 +36,6 @@ Vue.prototype.$toastr = toastr;
 library.add(faTrash, faPen, faEye);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.component("apexchart", VueApexCharts);
-
-Vue.use(CKEditor);
 
 Vue.use(ElementUI, { locale });
 
