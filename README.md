@@ -1,21 +1,23 @@
-# CBCode :pencil2:
-Proyecto para la materia "Desarrolla y administra plataformas de aprendizaje e-learning" :pencil:
+# ABCode :pencil2:
+ABCode is an open plattform to learn programming.
 
-## Como correrlo? :thinking:
+## How to run? :thinking:
 ```
-# Clonar el repo
+# Clone repo
 git clone https://github.com/Obsinqsob01/e-learning-plattform.git
 
-# Moverse al directorio del proyecto
+# Move to workspace
 cd e-learning-plattform
 
-# Instalar las dependencias del proyecto
+# Install dependencies
 npm install
 
-# Correr el proyecto en localhost:8080
+# Run project in localhost:8080
 npm run serve
 ```
-Y estas listo para probar :yum:
+Are you ready to test? :yum:
+
+This project is frontend from [ABCode-api repo](https://github.com/Obsinqsob01/abcode-api)
 
 ## Licencia
 The source code is licensed [MIT](https://github.com/Obsinqsob01/e-learning-plattform/blob/master/LICENSE)
