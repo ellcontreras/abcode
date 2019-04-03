@@ -44,7 +44,7 @@
                       <span class="icon" title="Ver esta lección">
                         <font-awesome-icon
                           icon="eye"
-                          @click="$router.push(`/course/1/tema/${scope.row.Id}`)"
+                          @click="$router.push(`/lesson/${scope.row.Id}`)"
                         />
                       </span>
                     </div>
