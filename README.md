@@ -4,7 +4,7 @@ ABCode is an open plattform to learn programming.
 ## How to run? :thinking:
 ```
 # Clone repo
-git clone https://github.com/Obsinqsob01/e-learning-plattform.git
+git clone https://github.com/Obsinqsob01/abcode.git
 
 # Move to workspace
 cd e-learning-plattform
