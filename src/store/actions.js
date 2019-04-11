@@ -39,7 +39,13 @@ import {
   UPDATE_LESSON,
   UPDATE_LESSON_SUCCESS,
   REMOVE_LESSON,
-  REMOVE_LESSON_SUCCESS
+  REMOVE_LESSON_SUCCESS,
+  ADD_LESSON_WITH_QUIZ,
+  ADD_LESSON_WITH_QUIZ_SUCCESS,
+  QUIZ_BY_LESSON_ID,
+  QUIZ_BY_LESSON_ID_SUCCESS,
+  UPDATE_LESSON_WITH_QUIZ_SUCCESS,
+  UPDATE_LESSON_WITH_QUIZ
 } from "./mutation-types";
 
 export const courseActions = {
@@ -161,16 +167,40 @@ export const lessonActions = {
       commit(ADD_LESSON_SUCCESS, res.data);
     });
   },
+  addLessonWithQuiz({ commit }, payload) {
+    commit(ADD_LESSON_WITH_QUIZ);
+    axios.post(`${API_BASE}/lesson`, payload).then(res => {
+      commit(ADD_LESSON_WITH_QUIZ_SUCCESS, res.data);
+    });
+  },
   updateLesson({ commit }, payload) {
     commit(UPDATE_LESSON);
     axios.put(`${API_BASE}/lesson/${payload.Id}`, payload).then(res => {
       commit(UPDATE_LESSON_SUCCESS, payload);
     });
   },
+  updateLessonWithQuiz({ commit }, payload) {
+    commit(UPDATE_LESSON_WITH_QUIZ);
+    axios.put(`${API_BASE}/lesson/${payload.Id}`, payload).then(res => {
+      axios.put(`${API_BASE}/quiz/${payload.quiz.Id}`, payload.quiz).then(r => {
+        commit(UPDATE_LESSON_SUCCESS, payload);
+        commit(UPDATE_LESSON_WITH_QUIZ_SUCCESS, payload.quiz);
+      });
+    });
+  },
   removeLesson({ commit }, payload) {
     commit(REMOVE_LESSON);
     axios.delete(`${API_BASE}/lesson/${payload}`).then(res => {
       commit(REMOVE_LESSON_SUCCESS, payload);
+    });
+  }
+};
+
+export const quizActions = {
+  quizByLessonId({ commit }, payload) {
+    commit(QUIZ_BY_LESSON_ID);
+    axios.get(`${API_BASE}/quiz/lesson/${payload}`).then(res => {
+      commit(QUIZ_BY_LESSON_ID_SUCCESS, res.data);
     });
   }
 };
