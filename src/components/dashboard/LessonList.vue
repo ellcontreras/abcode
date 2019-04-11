@@ -23,11 +23,7 @@
               <el-table :data="$store.getters.lessonByTemaId(tema.Id)">
                 <el-table-column prop="Id" label="ID"></el-table-column>
                 <el-table-column prop="Name" label="Nombre"></el-table-column>
-                <el-table-column label="Content">
-                  <template slot-scope="scope">
-                    <div v-html="scope.row.Content"></div>
-                  </template>
-                </el-table-column>
+                <el-table-column prop="WhatIs" label="¿Qué es?"></el-table-column>
                 <el-table-column prop="Tema.Title" label="Tema"></el-table-column>
                 <el-table-column label="Operaciones">
                   <template slot-scope="scope">
