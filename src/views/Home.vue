@@ -6,39 +6,49 @@
           <el-row type="flex">
             <el-col center>
               <div class="has-text-centered">
-                <img src="../static/luces.svg" alt>
-                <h1>Fundamentos de programación</h1>
-                <p>Vas empezando? Los fundamentos serán geniales para ti</p>
+                <router-link to="/category/fundamentos">
+                  <img src="../static/luces.svg" alt>
+                  <h1>Fundamentos de programación</h1>
+                  <p>Vas empezando? Los fundamentos serán geniales para ti</p>
+                </router-link>
               </div>
             </el-col>
             <el-col>
               <div class="has-text-centered">
-                <img src="../static/orientado_objetos.svg" alt>
-                <h1>Programación Orientada a Objetos</h1>
-                <p>Ya eres más avanzado, prueba con POO</p>
+                <router-link to="/category/poo">
+                  <img src="../static/orientado_objetos.svg" alt>
+                  <h1>Programación Orientada a Objetos</h1>
+                  <p>Ya eres más avanzado, prueba con POO</p>
+                </router-link>
               </div>
             </el-col>
             <el-col>
               <div class="has-text-centered">
-                <img src="../static/desarrollo_web.svg" alt>
-                <h1>Desarrollo web</h1>
-                <p>Te gustaría aprender a desarrollar sitios web</p>
+                <router-link to="/category/web">
+                  <img src="../static/desarrollo_web.svg" alt>
+                  <h1>Desarrollo web</h1>
+                  <p>Te gustaría aprender a desarrollar sitios web</p>
+                </router-link>
               </div>
             </el-col>
           </el-row>
           <el-row type="flex">
             <el-col>
               <div class="has-text-centered">
-                <img src="../static/desarrollo_apps.svg" alt>
-                <h1>Desarrollo Movil</h1>
-                <p>Aprende a hacer aplicaciones para telefonos celulares</p>
+                <router-link to="/category/apps">
+                  <img src="../static/desarrollo_apps.svg" alt>
+                  <h1>Desarrollo Movil</h1>
+                  <p>Aprende a hacer aplicaciones para telefonos celulares</p>
+                </router-link>
               </div>
             </el-col>
             <el-col>
               <div class="has-text-centered">
-                <img src="../static/redes.svg" alt>
-                <h1>Servidores y Redes</h1>
-                <p>Aprende sobre servidores y redes</p>
+                <router-link to="/category/servidores">
+                  <img src="../static/redes.svg" alt>
+                  <h1>Servidores y Redes</h1>
+                  <p>Aprende sobre servidores y redes</p>
+                </router-link>
               </div>
             </el-col>
           </el-row>
@@ -85,6 +95,12 @@ img {
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
+}
+a {
+  color: #444 !important;
+}
+a:hover {
+  color: #555 !important;
 }
 </style>
 
