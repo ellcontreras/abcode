@@ -35,7 +35,13 @@ import {
   UPDATE_LESSON,
   UPDATE_LESSON_SUCCESS,
   REMOVE_LESSON,
-  REMOVE_LESSON_SUCCESS
+  REMOVE_LESSON_SUCCESS,
+  ADD_LESSON_WITH_QUIZ,
+  ADD_LESSON_WITH_QUIZ_SUCCESS,
+  QUIZ_BY_LESSON_ID,
+  QUIZ_BY_LESSON_ID_SUCCESS,
+  UPDATE_LESSON_WITH_QUIZ,
+  UPDATE_LESSON_WITH_QUIZ_SUCCESS
 } from "./mutation-types";
 
 export const DailyUpdatesMutations = {
@@ -180,6 +186,15 @@ export const lessonMutations = {
 
     router.push(`/lesson/${payload.Id}`);
   },
+  [ADD_LESSON_WITH_QUIZ]: state => {
+    state.showLoader = true;
+  },
+  [ADD_LESSON_WITH_QUIZ_SUCCESS]: (state, payload) => {
+    state.showLoader = false;
+    state.lessons.push(payload);
+
+    router.push(`/lesson/${payload.Id}`);
+  },
   [UPDATE_LESSON]: state => {
     state.showLoader = true;
   },
@@ -194,6 +209,12 @@ export const lessonMutations = {
 
     router.push(`/lesson/${payload.Id}`);
   },
+  [UPDATE_LESSON_WITH_QUIZ]: state => {
+    state.showLoader = true;
+  },
+  [UPDATE_LESSON_WITH_QUIZ_SUCCESS]: state => {
+    state.showLoader = false;
+  },
   [REMOVE_LESSON]: state => {
     state.showLoader = true;
   },
@@ -201,5 +222,14 @@ export const lessonMutations = {
     state.showLoader = false;
     const index = state.lessons.findIndex(c => c.Id === payload);
     state.lessons.splice(index, 1);
+  }
+};
+
+export const quizMutations = {
+  [QUIZ_BY_LESSON_ID]: state => {
+    state.showLoader = false;
+  },
+  [QUIZ_BY_LESSON_ID_SUCCESS]: (state, payload) => {
+    state.quiz = payload;
   }
 };
