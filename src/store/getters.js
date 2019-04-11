@@ -8,6 +8,9 @@ export const courseGetters = {
     } else {
       return state.course;
     }
+  },
+  courseByCategory: (state, getters) => categoryName => {
+    return getters.allCourses.filter(c => c.Category === categoryName);
   }
 };
 
@@ -52,5 +55,14 @@ export const lessonGetters = {
     } else {
       return state.lessonsByTema;
     }
+  }
+};
+
+export const categoriesGetters = {
+  allCategories: state => {
+    return state.courseCategories;
+  },
+  categoryByName: (state, getters) => name => {
+    return getters.allCategories.find(c => c.categoryName === name);
   }
 };
