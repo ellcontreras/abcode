@@ -6,7 +6,9 @@
       <el-form-item label="Title:">
         <el-input v-model="tema.Title"></el-input>
       </el-form-item>
-      <quill-editor v-model="tema.Description"/>
+      <el-form-item>
+        <quill-editor v-model="tema.Description"/>
+      </el-form-item>
       <el-form-item label="Curso al que pertenece el tema:">
         <el-select v-model="tema.CourseId">
           <el-option
