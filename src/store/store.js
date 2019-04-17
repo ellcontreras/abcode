@@ -36,7 +36,7 @@ export default new Vuex.Store({
     temasByCourse: [],
     lessonsByTema: [],
     course: {},
-    quiz: {},
+    quiz: [],
     courseCategories: [
       {
         title: "Fundamentos de Programación",
