@@ -40,6 +40,7 @@ export default {
   beforeCreate() {
     this.$store.dispatch("allCourses");
     this.$store.dispatch("allTemas");
+    this.$store.dispatch("allLessons")
   },
   created() {
     this.$store.subscribe(mutation => {

@@ -4,12 +4,14 @@
 
     <el-container>
       <el-card shadow="always" v-for="(category, key) of $store.state.courseCategories" :key="key">
-        <img :src="category.image" class="image is-96x96" :alt="category.image">
-        <h3>{{ category.title }}</h3>
-        <p>{{ category.description }}</p>
+        <router-link :to="`category/${category.categoryName}`">
+          <img :src="category.image" class="image is-96x96" :alt="category.image">
+          <h3>{{ category.title }}</h3>
+          <p>{{ category.description }}</p>
+        </router-link>
 
-        <div v-for="(link, k) of category.links" :key="k">
-          <router-link :to="`/course/${link}`">{{ link }}</router-link>
+        <div v-for="(course, k) of $store.getters.courseByCategory(category.categoryName)" :key="k">
+          <router-link :to="`/course/${course.Id}`">{{ course.Name }}</router-link>
         </div>
       </el-card>
     </el-container>

@@ -11,8 +11,14 @@ import DashboardNewCourse from "./views/DashboardNewCourse.vue";
 import DashboardTemas from "./views/DashboardTemas.vue";
 import DashboardNewTema from "./views/DashboardNewTema.vue";
 import DashboardEditTema from "./views/DashboardEditTema.vue";
+import DashboardLessons from "./views/DashboardLessons.vue";
+import DashboardNewLesson from "./views/DashboardNewLesson.vue";
+import DashboardEditLesson from "./views/DashboardEditLesson.vue";
 import PageNotFound from "./views/PageNotFound.vue";
+import Lesson from "./views/Lesson.vue";
 import Tema from "./views/Tema.vue";
+import Category from "./views/Category.vue";
+import CourseInProgress from "./views/CourseInProgress.vue";
 
 Vue.use(Router);
 
@@ -77,8 +83,38 @@ export default new Router({
           path: "temas/edit/:id",
           name: "dashboard edit tema",
           component: DashboardEditTema
+        },
+        {
+          path: "lessons",
+          name: "dashboard lessons",
+          component: DashboardLessons
+        },
+        {
+          path: "lessons/new",
+          name: "dashboard new lesson",
+          component: DashboardNewLesson
+        },
+        {
+          path: "lessons/edit/:id",
+          name: "Dashboard edit lesson",
+          component: DashboardEditLesson
         }
       ]
+    },
+    {
+      path: "/lesson/:id",
+      name: "Lesson",
+      component: Lesson
+    },
+    {
+      path: "/category/:name",
+      name: "category view",
+      component: Category
+    },
+    {
+      path: "/course/progress/:id",
+      name: "Course in progress",
+      component: CourseInProgress
     },
     {
       path: "*",

@@ -3,6 +3,12 @@
     <el-tag type="success">{{ tema.Course.Name | capitalize}}</el-tag>
     <h1 class="has-text-centered">{{ tema.Title }}</h1>
     <div v-html="tema.Description" class="has-text-centered"></div>
+    <div>
+      <h2>Temas de este curso:</h2>
+      <div v-for="lesson in lessons" :key="lesson.Id">
+        <h3 @click="$router.push(`/lesson/${lesson.Id}`)">{{ lesson.Name }}</h3>
+      </div>
+    </div>
   </el-card>
 </template>
 
@@ -20,6 +26,9 @@ export default {
   computed: {
     tema() {
       return this.$store.state.tema;
+    },
+    lessons() {
+      return this.$store.getters.lessonByTemaId(this.$route.params.temaId);
     }
   },
   methods: {

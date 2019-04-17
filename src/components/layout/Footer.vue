@@ -15,7 +15,7 @@
             <router-link to="/courses">Cursos</router-link>
           </p>
           <p v-for="course in $store.getters.allCourses" :key="course.Id">
-            <router-link to="/courses">{{ course.Name }}</router-link>
+            <router-link :to="`/course/${course.Id}`">{{ course.Name }}</router-link>
           </p>
         </div>
       </el-col>

@@ -6,8 +6,8 @@
       <el-form-item label="Title:">
         <el-input v-model="tema.Title"></el-input>
       </el-form-item>
-      <el-form-item label="Descripción:">
-        <ckeditor :editor="editor" v-model="tema.Description" class="color-black"/>
+      <el-form-item>
+        <quill-editor v-model="tema.Description"/>
       </el-form-item>
       <el-form-item label="Curso al que pertenece el tema:">
         <el-select v-model="tema.CourseId">
@@ -27,13 +27,8 @@
 </template>
 
 <script>
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-
 export default {
   name: "DashboardNewCourse",
-  data: () => ({
-    editor: ClassicEditor
-  }),
   computed: {
     tema() {
       return this.$store.getters.temaById(this.$route.params.id);

@@ -23,7 +23,25 @@ import {
   ALL_TEMAS,
   ALL_TEMAS_SUCCESS,
   ALL_TEMAS_BY_COURSE_ID,
-  ALL_TEMAS_BY_COURSE_ID_SUCCESS
+  ALL_TEMAS_BY_COURSE_ID_SUCCESS,
+  ALL_LESSONS,
+  ALL_LESSONS_SUCCESS,
+  LESSON_BY_ID_BY_TEMA,
+  LESSON_BY_ID_BY_TEMA_SUCCESS,
+  ALL_LESSONS_BY_TEMA_ID,
+  ALL_LESSONS_BY_TEMA_ID_SUCCESS,
+  ADD_LESSON,
+  ADD_LESSON_SUCCESS,
+  UPDATE_LESSON,
+  UPDATE_LESSON_SUCCESS,
+  REMOVE_LESSON,
+  REMOVE_LESSON_SUCCESS,
+  ADD_LESSON_WITH_QUIZ,
+  ADD_LESSON_WITH_QUIZ_SUCCESS,
+  QUIZ_BY_LESSON_ID,
+  QUIZ_BY_LESSON_ID_SUCCESS,
+  UPDATE_LESSON_WITH_QUIZ,
+  UPDATE_LESSON_WITH_QUIZ_SUCCESS
 } from "./mutation-types";
 
 export const DailyUpdatesMutations = {
@@ -133,5 +151,85 @@ export const temaMutations = {
     state.showLoader = false;
     const index = state.temas.findIndex(c => c.Id === payload);
     state.temas.splice(index, 1);
+  }
+};
+
+export const lessonMutations = {
+  [ALL_LESSONS](state) {
+    state.showLoader = true;
+  },
+  [ALL_LESSONS_SUCCESS](state, payload) {
+    state.showLoader = false;
+    state.lessons = payload;
+  },
+  [LESSON_BY_ID_BY_TEMA](state) {
+    state.showLoader = true;
+  },
+  [LESSON_BY_ID_BY_TEMA_SUCCESS](state, payload) {
+    state.showLoader = false;
+    console.log("Recibo de forma correcta", payload);
+    state.lesson = payload;
+  },
+  [ALL_LESSONS_BY_TEMA_ID](state, payload) {
+    state.showLoader = true;
+  },
+  [ALL_LESSONS_BY_TEMA_ID_SUCCESS](state, payload) {
+    state.showLoader = false;
+    state.lessonsByTema = payload;
+  },
+  [ADD_LESSON]: state => {
+    state.showLoader = true;
+  },
+  [ADD_LESSON_SUCCESS]: (state, payload) => {
+    state.showLoader = false;
+    state.lessons.push(payload);
+
+    router.push(`/lesson/${payload.Id}`);
+  },
+  [ADD_LESSON_WITH_QUIZ]: state => {
+    state.showLoader = true;
+  },
+  [ADD_LESSON_WITH_QUIZ_SUCCESS]: (state, payload) => {
+    state.showLoader = false;
+    state.lessons.push(payload);
+
+    router.push(`/lesson/${payload.Id}`);
+  },
+  [UPDATE_LESSON]: state => {
+    state.showLoader = true;
+  },
+  [UPDATE_LESSON_SUCCESS]: (state, payload) => {
+    state.showLoader = false;
+    state.lessons = state.lessons.map(t => {
+      if (t.Tema.Id === payload.tema) {
+        return payload;
+      }
+      return t;
+    });
+
+    router.push(`/lesson/${payload.Id}`);
+  },
+  [UPDATE_LESSON_WITH_QUIZ]: state => {
+    state.showLoader = true;
+  },
+  [UPDATE_LESSON_WITH_QUIZ_SUCCESS]: state => {
+    state.showLoader = false;
+  },
+  [REMOVE_LESSON]: state => {
+    state.showLoader = true;
+  },
+  [REMOVE_LESSON_SUCCESS]: (state, payload) => {
+    state.showLoader = false;
+    const index = state.lessons.findIndex(c => c.Id === payload);
+    state.lessons.splice(index, 1);
+  }
+};
+
+export const quizMutations = {
+  [QUIZ_BY_LESSON_ID]: state => {
+    state.showLoader = false;
+  },
+  [QUIZ_BY_LESSON_ID_SUCCESS]: (state, payload) => {
+    state.quiz = payload;
   }
 };
