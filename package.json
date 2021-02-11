@@ -11,7 +11,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/vue-fontawesome": "^0.1.5",
-    "apexcharts": "^3.6.3",
+    "apexcharts": "^3.24.0",
     "element-ui": "^2.6.1",
     "i": "^0.3.6",
     "npm": "^6.9.0",
